@@ -12,11 +12,28 @@ app.engine('handlebars', exphbs.engine({ defaultLayout: 'main', handlebars: allo
 // Use handlebars to render
 app.set('view engine', 'handlebars');
 
-// Tell our app to send the "hello world" message to our home page
-app.get('/', (req, res) => {
-  res.render('home', { msg: 'Handlebars are Cool!' });
-})
+//--------------------------------------------------------
+//--- ROUTES ---------------------------------------------
 
+// OUR MOCK ARRAY OF EVENTS
+const events = [
+    { title: "Puppy Party 1", desc: "A great event that is super fun to look at and good", imgUrl: "https://images.squarespace-cdn.com/content/v1/5af442ebfcf7fda4a1b29207/1565718971777-J4KV5I7B5ER2FUOFP622/IMG_1871.JPG?format=1000w" },
+    { title: "Puppy Party 2", desc: "A great event that is super fun to look at and good", imgUrl: "https://blog.imgur.com/wp-content/uploads/2016/03/puppy.jpg" },
+    { title: "Puppy Party 3", desc: "A great event that is super fun to look at and good", imgUrl: "https://i.pinimg.com/736x/ba/62/2c/ba622c4e345b72c6d1e7965f14a8267e--basset-hound-puppy-hound-puppies.jpg" }
+  ]
+  
+  // HOME - EVENTS INDEX
+  app.get('/', (req, res) => {
+    res.render('events-index', { events: events });
+  })
+
+
+
+
+
+
+
+//--------------------------------------------------------
 // Choose a port to listen on
 const port = process.env.PORT || 3000;
 
