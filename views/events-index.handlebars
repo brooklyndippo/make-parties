@@ -1,7 +1,19 @@
 <!-- events-index -->
-<h1>Events</h1>
-{{#each events}}
-  <h2>{{this.title}}</h2>
-  <img class="img-fluid" width="50%" src="{{this.imgUrl}}" alt="Puppies!">
-  <p>{{this.desc}}</p>
-{{/each}}
+<div class="row mt-4">
+    <div class="col-lg-6 offset-lg-3">
+        <h1>Events</h1>
+        {{#each events}}
+        <div class="card mt-3 px-0">
+            <img class="card-img-top" src="{{this.imgUrl}}" alt="Puppies!">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.desc}}</p>
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-info m-2">RSVP</a>
+                    <a href="#" class="btn btn-primary m-2">VIEW</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
